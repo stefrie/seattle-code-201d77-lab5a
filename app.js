@@ -53,10 +53,8 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
     let stringMultiply = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiplyTwo + '.';
     return [sumTwo, multiplyTwo, stringSum, stringMultiply];
 }
-
 // Here is the test for sumAndMultiply(); uncomment it to run it
 testSumAndMultiply(4,7,5);
-
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
@@ -69,16 +67,22 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
-// Write your code here
+// // Write your code here
 let testArray = [2, 3, 4]; //eslint-disable-line
+let testArray2 = [2, 3, 4, 5]
 
-function sumArray(sumArr) { //eslint-disable-line
-
+function sumArray(values) { //eslint-disable-line
+    let runningTotal = 0;
+    for (let i=0; i < values.length; i++) {
+        runningTotal = runningTotal + values[i];
+    }
+    let message = values + ' was passed in as an array of numbers, and ' + runningTotal + ' is their sum.';
+    return [runningTotal, message]
 }
 
 // Here is the test for sumArray(); uncomment it to run it
-
-// testSumArray(testArray);
+console.log(sumArray(testArray));
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -93,11 +97,16 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(multArr) { //eslint-disable-line
+// function multiplyArray(values) { //eslint-disable-line
+//     let runningTotal = 1;
+//     for (let i=0; i < values.length; i++) {
+//         runningTotal = runningTotal * values[i];
+//     }
+//     let message = `The numbers ${values} have a product of ${runningTotal}.`;
+//     return [runningTotal, message];
+// }
 
-}
-
-// Here is the test for multiplyArray(); uncomment it to run it
+// // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
