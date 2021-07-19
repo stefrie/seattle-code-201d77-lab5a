@@ -74,9 +74,9 @@ let testArray2 = [2, 3, 4, 5]
 function sumArray(values) { //eslint-disable-line
     let runningTotal = 0;
     for (let i=0; i < values.length; i++) {
-        runningTotal = runningTotal + values[i];
+        runningTotal = sum(runningTotal, values[i])[0];
     }
-    let message = values + ' was passed in as an array of numbers, and ' + runningTotal + ' is their sum.';
+    let message = `${values} was passed in as an array of numbers, and ${runningTotal} is their sum.`;
     return [runningTotal, message]
 }
 
@@ -100,7 +100,7 @@ Test this function by hand in the console to get it working, and when you think 
 function multiplyArray(values) { //eslint-disable-line
     let runningTotal = 1;
     for (let i=0; i < values.length; i++) {
-        runningTotal = runningTotal * values[i];
+        runningTotal = multiply(runningTotal, values[i])[0];
     }
     let message = `The numbers ${values} have a product of ${runningTotal}.`;
     return [runningTotal, message];
@@ -131,7 +131,12 @@ Test this function by hand in the console to get it working, and when you think 
 let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+    let runningTotal = 1;
+    for (let i=0; i < dynamicArray.length; i++) {
+        runningTotal = runningTotal * dynamicArray[i];
+    }
+    let message = `The numbers ${values} have a product of ${runningTotal}.`;
+    return [runningTotal, message];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
